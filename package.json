@@ -20,6 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/denkwai/javascript-kata-1.git"
   },
+  "homepage": "https://wunderlibrary.herokuapp.com",
   "keywords": [
     "javascript",
     "kata"
@@ -30,7 +31,6 @@
     "url": "https://github.com/denkwai/javascript-kata-1/issues"
   },
   "dependencies": {
-    "@types/papaparse": "^5.2.2",
     "mobx": "^5.15.6",
     "mobx-react": "^6.3.0",
     "papaparse": "^5.3.0",
@@ -40,6 +40,7 @@
     "react-scripts": "^3.4.3"
   },
   "devDependencies": {
+    "@types/papaparse": "^5.2.2",
     "@types/jest": "^26.0.13",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
