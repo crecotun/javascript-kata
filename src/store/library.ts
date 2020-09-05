@@ -30,17 +30,17 @@ export class LibraryStore {
 		return this.items
 	}
 
-	getItemByIsbn(isbn: string) {
+	getItemsByIsbn(isbn: string) {
 		if (!isbn) {
-			return
+			return this.getItems()
 		}
 
-		return this.getItems().find((item) => item.isbn === isbn)
+		return this.getItems().filter((item) => item.isbn === isbn)
 	}
 
 	getItemsByAuthorEmail(email: string) {
 		if (!email) {
-			return
+			return this.getItems()
 		}
 
 		return this.getItems().filter((item) => item.authors.includes(email))

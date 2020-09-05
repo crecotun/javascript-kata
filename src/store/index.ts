@@ -15,6 +15,7 @@ export class RootStore {
 	}
 
 	fetchData() {
+		// show loading state
 		// move out of store
 		Papa.parse('./data/authors.csv', {
 			download: true,

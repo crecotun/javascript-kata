@@ -1,13 +1,24 @@
 import React from 'react'
+import { FilterByType } from 'types/library'
 
 export type SearchPropsType = {
-	searchBy: string
-	setSearchType(type: string): void
+	searchBy: FilterByType
+	setSearchType(type: FilterByType): void
+	searchValue: string
+	setSearchValue(type: string): void
 }
 
-const Search: React.FC<SearchPropsType> = ({ searchBy, setSearchType }) => {
+const Search: React.FC<SearchPropsType> = ({
+	searchBy,
+	setSearchType,
+	searchValue,
+	setSearchValue,
+}) => {
 	function handleRadioChange(e: React.ChangeEvent<HTMLInputElement>) {
-		setSearchType(e.target.value)
+		setSearchType(e.target.value as FilterByType)
+	}
+	function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+		setSearchValue(e.target.value)
 	}
 
 	return (
@@ -36,7 +47,11 @@ const Search: React.FC<SearchPropsType> = ({ searchBy, setSearchType }) => {
 				</label>
 			</fieldset>
 
-			<input type="text" />
+			<input
+				type="text"
+				defaultValue={searchValue}
+				onChange={handleInputChange}
+			/>
 		</form>
 	)
 }

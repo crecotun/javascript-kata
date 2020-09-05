@@ -9,3 +9,5 @@ export type LibraryItemType = {
 	isbn: string
 	publishedAt?: string
 }
+
+export type FilterByType = 'isbn' | 'email'
