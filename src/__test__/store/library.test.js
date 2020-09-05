@@ -9,13 +9,13 @@ beforeAll(() => {
 
 describe('Library', () => {
   test('add books', () => {
-    libraryStore.addItems('books', booksData)
+    libraryStore.addItems('book', booksData)
 
-    expect(libraryStore.books).toEqual(booksData)
+    expect(libraryStore.getItemsByType('book').length).toBe(booksData.length)
   })
   test('add magazines', () => {
-    libraryStore.addItems('magazines', magazinesData)
+    libraryStore.addItems('magazine', magazinesData)
 
-    expect(libraryStore.magazines).toEqual(magazinesData)
+    expect(libraryStore.getItemsByType('magazine').length).toBe(magazinesData.length)
   })
 })

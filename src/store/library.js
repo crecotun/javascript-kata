@@ -1,12 +1,29 @@
 export class LibraryStore {
-  constructor(data) {
-    this.books = data && data.books || []
-    this.magazines = data && data.magazines || []
+  constructor() {
+    this.items = []
+  }
+  addItems(type, items = []) {
+    if (!type || !items.length) {
+      return
+    }
+
+    items.forEach(item => {
+      this.items.push({
+        type,
+        ...item
+      })
+    })
   }
 
-  addItems(type, items = []) {
-    if (type && items.length) {
-      this[type] = items
+  getItemsByType(type) {
+    if (!type) {
+      return []
     }
+
+    return this.items.filter(item => item.type === type)
+  }
+
+  getItems() {
+    return this.items
   }
 }
