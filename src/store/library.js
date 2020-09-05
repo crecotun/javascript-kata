@@ -26,4 +26,12 @@ export class LibraryStore {
   getItems() {
     return this.items
   }
+
+  getItemByIsbn(isbn) {
+    if (!isbn) {
+      return
+    }
+
+    return this.getItems().find(item => item.isbn === isbn)
+  }
 }
