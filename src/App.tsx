@@ -11,10 +11,8 @@ const App = () => {
 
 	return (
 		<Provider {...store}>
-			<div>
-				<Search searchBy={searchBy} setSearchType={setSearchType} />
-				<Library />
-			</div>
+			<Search searchBy={searchBy} setSearchType={setSearchType} />
+			<Library />
 		</Provider>
 	)
 }
