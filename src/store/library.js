@@ -9,8 +9,9 @@ export class LibraryStore {
 
     items.forEach(item => {
       this.items.push({
+        ...item,
         type,
-        ...item
+        authors: item.authors.split(',')
       })
     })
   }
@@ -33,5 +34,13 @@ export class LibraryStore {
     }
 
     return this.getItems().find(item => item.isbn === isbn)
+  }
+
+  getItemsByAuthorEmail(email) {
+    if (!email) {
+      return
+    }
+
+    return this.getItems().filter(item => item.authors.includes(email))
   }
 }
