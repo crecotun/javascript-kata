@@ -1,10 +1,10 @@
 import { observable } from 'mobx'
+import { LibraryItemType, LibraryItemRawType } from 'types/library'
 
 export class LibraryStore {
-  constructor() {
-    this.items = observable([])
-  }
-  addItems(type, items = []) {
+  @observable items: LibraryItemType[] = []
+
+  addItems(type: LibraryItemType['type'], items: LibraryItemRawType[] = []) {
     if (!type || !items.length) {
       return
     }
@@ -18,7 +18,7 @@ export class LibraryStore {
     })
   }
 
-  getItemsByType(type) {
+  getItemsByType(type: LibraryItemType['type']) {
     if (!type) {
       return []
     }
@@ -30,7 +30,7 @@ export class LibraryStore {
     return this.items
   }
 
-  getItemByIsbn(isbn) {
+  getItemByIsbn(isbn: string) {
     if (!isbn) {
       return
     }
@@ -38,7 +38,7 @@ export class LibraryStore {
     return this.getItems().find(item => item.isbn === isbn)
   }
 
-  getItemsByAuthorEmail(email) {
+  getItemsByAuthorEmail(email: string) {
     if (!email) {
       return
     }

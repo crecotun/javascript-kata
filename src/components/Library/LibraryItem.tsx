@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import { LibraryItemType } from 'types/library';
 
-const LibraryItem = ({ title, isbn, authors }) => {
+const LibraryItem: React.FC<LibraryItemType> = ({ title, isbn, authors }) => {
   return (
     <div key={isbn} className={'libraryItem'}>
       title: {title} <br />
@@ -9,12 +9,6 @@ const LibraryItem = ({ title, isbn, authors }) => {
       author: {authors}<br />
     </div>
   )
-}
-
-LibraryItem.propTypes = {
-  title: PropTypes.string,
-  isbn: PropTypes.string,
-  authors: PropTypes.array
 }
 
 export { LibraryItem }

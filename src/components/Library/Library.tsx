@@ -1,21 +1,21 @@
-import React from 'react';
+import React from 'react'
 import { inject } from 'mobx-react'
 import { toJS } from 'mobx'
-import PropTypes from 'prop-types'
-import { LibraryItem } from './LibraryItem';
+import {LibraryItemType} from 'types/library'
+import {LibraryItem} from './LibraryItem'
 
-const Library = ({ items }) => {
-  return <div>{items.map(item => LibraryItem(item))}</div>
+type LibraryPropsType = {
+  items: LibraryItemType[]
 }
 
-Library.propTypes = {
-  items: PropTypes.any
+export const LibraryComponent: React.FC<LibraryPropsType> = ({items}) => {
+  return (<div>{items.map(item => LibraryItem(item))}</div>)
 }
 
-export default inject(({ store: { libraryStore } }) => {
+export const Library = inject(({ store: { libraryStore } }) => {
   return {
-    items: toJS(libraryStore.items).sort((a, b) => {
+    items: toJS(libraryStore.items).sort((a: LibraryItemType, b: LibraryItemType) => {
       return a.title.localeCompare(b.title);
     })
   }
-})(Library)
+})(LibraryComponent)
