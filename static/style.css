@@ -52,3 +52,16 @@ body {
     font-size: 16px;
     border-radius: 5px;
 }
+
+#app {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.search {
+    font-size: 16px;
+    margin: 20px;
+}
+.search label {display: inline-block; margin: 0 20px 0 0;}
+.search div {margin: 10px 0 0;}
+.search input {font-size: 20px; padding: 10px}
