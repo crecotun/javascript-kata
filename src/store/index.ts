@@ -4,6 +4,9 @@ import { AuthorsStore } from './authors'
 import { LibraryStore } from './library'
 
 export class RootStore {
+  authorsStore: AuthorsStore
+  libraryStore: LibraryStore
+
   constructor() {
     this.authorsStore = new AuthorsStore()
     this.libraryStore = new LibraryStore()
@@ -13,31 +16,31 @@ export class RootStore {
 
   fetchData() {
     // move out of store
-    Papa.parse('./authors.csv', {
+    Papa.parse('./data/authors.csv', {
       download: true,
       header: true,
       skipEmptyLines: true,
-      complete: (result) => {
+      complete: (result: any) => {
         if (result.data) {
           this.authorsStore.addData(result.data)
         }
       }
     })
-    Papa.parse('./books.csv', {
+    Papa.parse('./data/books.csv', {
       download: true,
       header: true,
       skipEmptyLines: true,
-      complete: (result) => {
+      complete: (result: any) => {
         if (result.data) {
           this.libraryStore.addItems('book', result.data)
         }
       }
     })
-    Papa.parse('./magazines.csv', {
+    Papa.parse('./data/magazines.csv', {
       download: true,
       header: true,
       skipEmptyLines: true,
-      complete: (result) => {
+      complete: (result: any) => {
         if (result.data) {
           this.libraryStore.addItems('magazine', result.data)
         }
