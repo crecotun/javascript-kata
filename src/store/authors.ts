@@ -9,4 +9,12 @@ export class AuthorsStore {
 			this.authors = authors
 		}
 	}
+
+	getAuthor = (email: string): AuthorType | undefined => {
+		if (!email) {
+			return
+		}
+
+		return this.authors.find((author) => author.email === email)
+	}
 }

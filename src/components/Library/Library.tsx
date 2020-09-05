@@ -9,7 +9,13 @@ type LibraryPropsType = {
 }
 
 export const LibraryComponent: React.FC<LibraryPropsType> = ({ items }) => {
-	return <div>{items.map((item) => LibraryItem(item))}</div>
+	return (
+		<div>
+			{items.map((item) => (
+				<LibraryItem key={item.isbn} {...item} />
+			))}
+		</div>
+	)
 }
 
 export const Library = inject(({ libraryStore }) => {
