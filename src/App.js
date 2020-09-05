@@ -6,7 +6,7 @@ import Library from './components/Library/Library'
 const store = new RootStore()
 
 const App = () => {
-  return (<Provider store={store}>
+  return (<Provider store={ store }>
     <div>
       <Library />
     </div>

@@ -40,3 +40,15 @@ body {
     padding: 2px 4px;
     border-radius: 3px;
 }
+
+.libraryItem {
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    line-height: 25px;
+    font-size: 16px;
+    border-radius: 5px;
+}
