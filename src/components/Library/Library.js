@@ -14,6 +14,8 @@ Library.propTypes = {
 
 export default inject(({ store: { libraryStore } }) => {
   return {
-    items: toJS(libraryStore.items)
+    items: toJS(libraryStore.items).sort((a, b) => {
+      return a.title.localeCompare(b.title);
+    })
   }
 })(Library)
