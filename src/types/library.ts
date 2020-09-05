@@ -1,11 +1,11 @@
 export type LibraryItemRawType = LibraryItemType & {
-  authors: string
+	authors: string
 }
 
 export type LibraryItemType = {
-  type: 'book' | 'magazine'
-  title: string
-  authors: string[]
-  isbn: string
-  publishedAt?: string
+	type: 'book' | 'magazine'
+	title: string
+	authors: string[]
+	isbn: string
+	publishedAt?: string
 }
