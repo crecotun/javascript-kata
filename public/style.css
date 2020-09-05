@@ -42,7 +42,7 @@ body {
 }
 
 .libraryItem {
-	width: 25%;
+	width: calc(25% - 40px);
 	display: inline-block;
 	vertical-align: top;
 	margin: 20px;
