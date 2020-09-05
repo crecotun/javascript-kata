@@ -1,6 +1,8 @@
+import { observable } from 'mobx'
+
 export class LibraryStore {
   constructor() {
-    this.items = []
+    this.items = observable([])
   }
   addItems(type, items = []) {
     if (!type || !items.length) {
